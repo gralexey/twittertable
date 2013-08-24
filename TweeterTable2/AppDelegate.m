@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "SingleTweetViewController.h"
 
 @implementation AppDelegate
 
@@ -25,9 +26,17 @@
     [self.window makeKeyAndVisible];
     
     MainViewController *vc = [[[MainViewController alloc] init] autorelease];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = vc;//[[UINavigationController alloc] init];
+    //[self.window.rootViewController.navigationController presentViewController:vc animated:YES completion:nil];
         
     return YES;
+}
+
+- (void)showSingleTweet
+{
+    SingleTweetViewController *vc = [[SingleTweetViewController alloc] init];
+    [self.window.rootViewController.navigationController presentViewController:vc animated:YES completion:nil];
+    [vc release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

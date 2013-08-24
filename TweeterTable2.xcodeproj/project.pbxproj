@@ -31,6 +31,8 @@
 		66DD18CA17C8C10700750481 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DD18C917C8C10700750481 /* TweetCell.m */; };
 		66DD18CC17C8C11F00750481 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD18CB17C8C11F00750481 /* TweetCell.xib */; };
 		66DD18CE17C8C29A00750481 /* im.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD18CD17C8C29A00750481 /* im.png */; };
+		66DD18D217C8ED3200750481 /* SingleTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DD18D017C8ED3200750481 /* SingleTweetViewController.m */; };
+		66DD18D317C8ED3200750481 /* SingleTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD18D117C8ED3200750481 /* SingleTweetViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,9 @@
 		66DD18C917C8C10700750481 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		66DD18CB17C8C11F00750481 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 		66DD18CD17C8C29A00750481 /* im.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = im.png; sourceTree = "<group>"; };
+		66DD18CF17C8ED3200750481 /* SingleTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleTweetViewController.h; sourceTree = "<group>"; };
+		66DD18D017C8ED3200750481 /* SingleTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleTweetViewController.m; sourceTree = "<group>"; };
+		66DD18D117C8ED3200750481 /* SingleTweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleTweetViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +138,9 @@
 				66DD18A317C8BAAD00750481 /* MainViewController.h */,
 				66DD18A417C8BAAD00750481 /* MainViewController.m */,
 				66DD18A517C8BAAD00750481 /* MainViewController.xib */,
+				66DD18CF17C8ED3200750481 /* SingleTweetViewController.h */,
+				66DD18D017C8ED3200750481 /* SingleTweetViewController.m */,
+				66DD18D117C8ED3200750481 /* SingleTweetViewController.xib */,
 				66DD18CD17C8C29A00750481 /* im.png */,
 				66DD188D17C8B9D500750481 /* Supporting Files */,
 			);
@@ -244,6 +252,7 @@
 				66DD18A717C8BAAD00750481 /* MainViewController.xib in Resources */,
 				66DD18CC17C8C11F00750481 /* TweetCell.xib in Resources */,
 				66DD18CE17C8C29A00750481 /* im.png in Resources */,
+				66DD18D317C8ED3200750481 /* SingleTweetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +275,7 @@
 				66DD18C217C8BF1B00750481 /* STTwitterOS.m in Sources */,
 				66DD18C317C8BF1B00750481 /* STHTTPRequest.m in Sources */,
 				66DD18CA17C8C10700750481 /* TweetCell.m in Sources */,
+				66DD18D217C8ED3200750481 /* SingleTweetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

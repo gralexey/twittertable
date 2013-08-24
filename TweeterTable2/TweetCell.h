@@ -11,7 +11,9 @@
 @interface TweetCell : UITableViewCell
 @property (retain) IBOutlet UIImageView *avatarView;
 @property (retain) IBOutlet UILabel *nameLabel;
-@property (retain) IBOutlet UITextView *messageTextField;
+@property (retain) IBOutlet UITextView *messageTextView;
 @property (retain) IBOutlet UILabel *timeLabel;
+
+- (void)setName:(NSString *)name message:(NSString *)message time:(NSString *)time avatar:(UIImage *)image;
 
 @end
