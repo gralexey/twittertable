@@ -16,6 +16,7 @@
 @property (retain) IBOutlet UILabel *nameLabel;
 @property (retain) IBOutlet UITextView *messageTextView;
 @property (retain) IBOutlet UILabel *timeLabel;
+@property (retain) UIImage *avatarImage;
 
 - (IBAction)back:(id)sender;
 

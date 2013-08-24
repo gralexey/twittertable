@@ -12,7 +12,8 @@
 @property (retain) IBOutlet UITableView *tableView;
 @property (retain) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (retain) NSArray *tweets;
-@property (retain) IBOutlet UINavigationController *nc;
+@property (retain) NSMutableDictionary *avatarUrlsAndIamges;
+
 
 - (IBAction)updateClicked:(id)sender;
 

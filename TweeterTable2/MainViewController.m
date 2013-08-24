@@ -25,7 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-
+        self.avatarUrlsAndIamges = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -75,11 +75,23 @@
         cell = [[TweetCell alloc] init];
     }
     
-    NSString *text = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"text"];
-    NSString *name = [[[self.tweets objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"name"];
-    NSString *time = [[[self.tweets objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"created_at"];
-    NSString *avatarURL = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"profile_image_url"];
-    UIImage *image = [UIImage imageNamed:@"im"]; //[UIImage imageWithData:[[self.tweetTable objectAtIndex:indexPath.row] objectForKey:@"avatarData"]];
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+    NSString *text = tweet[@"text"];
+    NSString *name = tweet[@"user"][@"name"];
+    NSString *time = tweet[@"user"][@"created_at"];
+    NSString *avatarURL = tweet[@"user"][@"profile_image_url"];
+    
+    UIImage *image = nil;
+    if (self.avatarUrlsAndIamges[avatarURL])
+    {
+        image = self.avatarUrlsAndIamges[avatarURL];
+    }
+    else
+    {
+        image = [UIImage imageNamed:@"im"];
+    }
+    
+    //UIImage *image = self.avatarUrlsAndIamges[avatarURL] ? self.avatarUrlsAndIamges[avatarURL] : [UIImage imageNamed:@"im"];
 
     [cell setName:name message:text time:time avatar:image];
 
@@ -90,6 +102,7 @@
 {
     SingleTweetViewController *vc = [[[SingleTweetViewController alloc] init] autorelease];
     vc.tweet = [self.tweets objectAtIndex:indexPath.row];
+    vc.avatarImage = self.avatarUrlsAndIamges[vc.tweet[@"user"][@"profile_image_url"]];
     [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -109,6 +122,7 @@
               self.tweets = statuses;
               [self.tableView reloadData];
               [self.activityIndicatorView stopAnimating];
+              [self requstAvatars];
               
           } errorBlock:^(NSError *error)
           {
@@ -121,6 +135,25 @@
      {
          NSLog(@"%@", [error description]);
      }];
+}
+
+- (void)requstAvatars
+{
+    dispatch_async(dispatch_queue_create("new queue", 0), ^{
+    
+        for (NSDictionary *dict in self.tweets)
+        {
+            NSString *avatarUrl = dict[@"user"][@"profile_image_url"];
+            if (!self.avatarUrlsAndIamges[avatarUrl])
+            {
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:avatarUrl]];
+                self.avatarUrlsAndIamges[avatarUrl] = [UIImage imageWithData:data];
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
 }
 
 @end

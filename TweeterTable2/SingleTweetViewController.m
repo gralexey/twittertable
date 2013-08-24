@@ -33,7 +33,8 @@
     NSString *name = [[self.tweet objectForKey:@"user"] objectForKey:@"name"];
     NSString *time = [[self.tweet objectForKey:@"user"] objectForKey:@"created_at"];
     NSString *avatarURL = [self.tweet objectForKey:@"profile_image_url"];
-    UIImage *image = [UIImage imageNamed:@"im"]; //[UIImage imageWithData:[[self.tweetTable objectAtIndex:indexPath.row] objectForKey:@"avatarData"]];
+    
+    UIImage *image = self.avatarImage ? self.avatarImage : [UIImage imageNamed:@"im"];
     
     self.messageTextView.text = text;
     self.timeLabel.text = time;
