@@ -91,6 +91,7 @@
     SingleTweetViewController *vc = [[[SingleTweetViewController alloc] init] autorelease];
     vc.tweet = [self.tweets objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)requestStatuses

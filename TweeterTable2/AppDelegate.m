@@ -26,8 +26,7 @@
     [self.window makeKeyAndVisible];
     
     MainViewController *vc = [[[MainViewController alloc] init] autorelease];
-    self.window.rootViewController = vc;//[[UINavigationController alloc] init];
-    //[self.window.rootViewController.navigationController presentViewController:vc animated:YES completion:nil];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
         
     return YES;
 }

@@ -12,6 +12,11 @@
 @property (retain) NSDictionary *tweet;
 @property (retain) IBOutlet UIView *tweetAreaView;
 
+@property (retain) IBOutlet UIImageView *avatarView;
+@property (retain) IBOutlet UILabel *nameLabel;
+@property (retain) IBOutlet UITextView *messageTextView;
+@property (retain) IBOutlet UILabel *timeLabel;
+
 - (IBAction)back:(id)sender;
 
 @end

@@ -27,8 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    TweetCell *cell = [[TweetCell alloc] init];
+    //TweetCell *cell = [[TweetCell alloc] init];
     
     NSString *text = [self.tweet objectForKey:@"text"];
     NSString *name = [[self.tweet objectForKey:@"user"] objectForKey:@"name"];
@@ -36,8 +35,13 @@
     NSString *avatarURL = [self.tweet objectForKey:@"profile_image_url"];
     UIImage *image = [UIImage imageNamed:@"im"]; //[UIImage imageWithData:[[self.tweetTable objectAtIndex:indexPath.row] objectForKey:@"avatarData"]];
     
-    [cell setName:name message:text time:time avatar:image];
-    [self.tweetAreaView addSubview:cell];
+    self.messageTextView.text = text;
+    self.timeLabel.text = time;
+    self.nameLabel.text = name;
+    [self.avatarView setImage:image];
+    
+    //[cell setName:name message:text time:time avatar:image];
+    //[self.tweetAreaView addSubview:cell];
 }
 
 - (void)didReceiveMemoryWarning
