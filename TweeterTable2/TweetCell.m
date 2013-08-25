@@ -26,6 +26,18 @@
     // Configure the view for the selected state
 }
 
+- (void)awakeFromNib
+{
+    self.messageTextView.userInteractionEnabled = NO;
+    self.messageTextView.editable = NO;
+    self.messageTextView.dataDetectorTypes = UIDataDetectorTypeLink;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    return YES;
+}
+
 - (void)setName:(NSString *)name message:(NSString *)message time:(NSString *)time avatar:(UIImage *)image
 {
     self.imageView.image = image;

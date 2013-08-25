@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TweetCell : UITableViewCell
+@interface TweetCell : UITableViewCell <UITextViewDelegate>
 @property (retain) IBOutlet UIImageView *avatarView;
 @property (retain) IBOutlet UILabel *nameLabel;
 @property (retain) IBOutlet UITextView *messageTextView;
